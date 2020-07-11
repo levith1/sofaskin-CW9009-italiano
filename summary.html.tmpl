@@ -5,9 +5,9 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta http-equiv="Refresh" Content="180">
 	#if $Extras.has_key('cwop')
-        <meta name="description" content="Tabelle Meteo e Record $station.location Stazione Meteo ($Extras.cwop). Sito generato da WeeWX">
+        <meta name="description" content="Tabelle Meteo e Record di $station.location Stazione Meteo ($Extras.cwop). Sito Meteo generato da WeeWX">
         #else
-        <meta name="description" content="Tabelle Meteo e Record $station.location Weather Station. Sito generato da WeeWX">
+        <meta name="description" content="Tabelle Meteo e Record di $station.location Stazione Meteo. Sito Meteo generaro da WeeWX">
 	#end if
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="profile" href="http://gmpg.org/xfn/11" />
@@ -18,12 +18,12 @@
 	<title itemprop="name">$station.location Tabelle Meteo e Record</title>
         
         <!-- Open Graph -->
-	<meta property="og:site_name" content="Tabelle Meteo e Record $station.location Stazione Meteo" />
-	<meta property="og:title" content="Summaries and Records"/>
+	<meta property="og:site_name" content="Tabelle Meteo e Record di $station.location Stazione Meteo" />
+	<meta property="og:title" content="Tabelle e Record"/>
 	#if $Extras.has_key('web_url')
 	<meta property="og:url" content="$Extras.web_url/summary.html"/>
 	#end if
-	<meta property="og:description" content="Tabelle Meteo eRecord $station.location Stazione Meteo. Sito generarto da WeeWX" />
+	<meta property="og:description" content="Tabelle Meteo e Record di $station.location Stazione Meteo. Sito Meteo generato da WeeWX" />
 	<meta property="og:type" content="website" /> 
 
         <!-- FavIcons -->
@@ -33,13 +33,15 @@
         <!-- Styles -->
         <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="css/main.css">
-
-	<!-- Font Awesome CDN links for 5.12.0-->
-        <!-- If you have a pro license -->
-        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.12.0/css/all.css" integrity="sha384-ekOryaXPbeCpWQNxMwSWVvQ0+1VrStoPJq54shlYhR8HzQgig1v5fas6YgOqLoKz" crossorigin="anonymous">
-        <!-- Free license -->
-        <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css" integrity="sha384-REHJTs1r2ErKBuJB0fCK99gCYsVjwxHrSU0N7I1zl9vZbggVJXRMsv/sLlOAGb4M" crossorigin="anonymous"> -->
-
+	
+	<!-- Font Awesome site kit links -->
+    
+    	<!-- If you have a pro license -->
+    	<script src="https://kit.fontawesome.com/20f41d8eed.js" crossorigin="anonymous"></script>
+   
+    	<!-- Free license -->
+    	<!-- <script src="https://kit.fontawesome.com/b527f43d5a.js" crossorigin="anonymous"></script> -->
+    
         <!-- Script -->
         <script src="js/modernizr-2.6.2.min.js"></script>
 	<script src="js/checkdiff.js"></script>
@@ -53,7 +55,7 @@
                 <div class="h-left" >
                 <h1><i class="fas fa-cloud" ></i> $station.location </h1>
                 <p>$station.latitude[0]&deg; $station.latitude[1]' $station.latitude[2] | $station.longitude[0]&deg; $station.longitude[1]' $station.longitude[2] | $station.altitude | <a href="https://www.google.com/maps/?q=$station.latitude[0]&deg;%20$station.latitude[1]%20$station.latitude[2],$station.longitude[0]&deg;%20$station.longitude[1]%20$station.longitude[2]" target="_blank" ><i class="fas fa-map-marker-alt" ></i> Show on map</a></p>
-                <h2>Summaries and Records</h2>
+                <h2>Tabelle e Record</h2>
                 <p><i class="far fa-clock" ></i> $current.dateTime $current.dateTime.format("%Z")</p>
 		<p id="freshweather" class="m-orange"></p>
 		<script>
@@ -65,15 +67,15 @@
                     <table>
                         <tr><td><b>Stazione:</b></td><td>$station.hardware</td></tr>
                         <tr><td><b>Software:</b></td><td><a href="http://weewx.com/" target="_blank" >WeeWX v$station.version</a></td></tr>
-                        <tr><td><b>Weewx uptime:</b></td><td>$station.uptime</td></tr>
-                        <tr><td><b>Server uptime:</b></td><td>$station.os_uptime</td></tr>
+                        <tr><td><b>Aggiornamento Weewx:</b></td><td>$station.uptime</td></tr>
+                        <tr><td><b>Aggiornamento Server:</b></td><td>$station.os_uptime</td></tr>
                     </table>
                 </div>
 
                 <nav>
                     <ul class="topnav" id="myTopnav">
 			<li class="icon"><a href="javascript:void(0);" onclick="myFunction()"><i class="fas fa-bars" ></i></a></li>
-                        <li><a href="/" >Corrente</a></li>
+                        <li><a href="/" >Correnti</a></li>
                         <li><a href="week.html" >Settimana</a></li>
                         <li><a href="month.html" >Mese</a></li>
                         <li><a href="year.html" >Anno</a></li>
@@ -90,50 +92,52 @@
 	    <div class="left" >
 
 		<div class="card" >
-                    <h1><i class="fas fa-bolt m-orange" ></i> Record di sempre (Da Sett. 2018)</h1>
+                    <h1><i class="fas fa-bolt m-orange" ></i> Record di sempre (da Ott. 2019)</h1>
                     <table class="tablespacer">
-			<tr><td colspan="3"><b>Temperature esterne</b></td></tr>
-			<tr><td>Maggiore</td><td>$alltime.outTemp.max</td><td>$alltime.outTemp.maxtime</td></tr>
-			<tr><td>Minore</td><td>$alltime.outTemp.min</td><td>$alltime.outTemp.mintime</td></tr>
+			<tr><td colspan="3"><b>Temperature</b></td></tr>
+			<tr><td>Massima</td><td>$alltime.outTemp.max</td><td>$alltime.outTemp.maxtime</td></tr>
+			<tr><td>Minima</td><td>$alltime.outTemp.min</td><td>$alltime.outTemp.mintime</td></tr>
 		    	<tr><td>Min Max</td><td>$alltime.outTemp.minmax</td><td>$alltime.outTemp.minmaxtime</td></tr>
 			<tr><td>Max Min</td><td>$alltime.outTemp.maxmin</td><td>$alltime.outTemp.maxmintime</td></tr>
-			<tr><td colspan="3"><br><b>Punto di rugiada</b></td></tr>
-			<tr><td>Maggiore</td><td>$alltime.dewpoint.max</td><td>$alltime.dewpoint.maxtime</td></tr>
-			<tr><td>Minore</td><td>$alltime.dewpoint.min</td><td>$alltime.dewpoint.mintime</td></tr>
+			<tr><td colspan="3"><br><b>Punto di Rugiada</b></td></tr>
+			<tr><td>Massima</td><td>$alltime.dewpoint.max</td><td>$alltime.dewpoint.maxtime</td></tr>
+			<tr><td>Minima</td><td>$alltime.dewpoint.min</td><td>$alltime.dewpoint.mintime</td></tr>
 			<tr><td colspan="3"><br><b>Piogge</b></td></tr>
-			<tr><td>Giorno Maggiore Pioggia</td><td>$alltime.rain.maxsum</td><td>$alltime.rain.maxsumtime.format("%m/%d/%Y")</td></tr>
-			<tr><td>Indice Maggiore Pioggia</td><td>$alltime.rainRate.max</td><td>$alltime.rainRate.maxtime</td></tr>
-			<tr><td colspan="3"><br><b>Indice di calore</b></td></tr>
-			<tr><td>Maggiore</td><td>$alltime.heatindex.max</td><td>$alltime.heatindex.maxtime</td></tr>
+			<tr><td>Giorno di Pioggia Max</td><td>$alltime.rain.maxsum</td><td>$alltime.rain.maxsumtime.format("%m/%d/%Y")</td></tr>
+			<tr><td>Indice di Pioggia Max</td><td>$alltime.rainRate.max</td><td>$alltime.rainRate.maxtime</td></tr>
+			<tr><td colspan="3"><br><b>Indice di Calore</b></td></tr>
+			<tr><td>Massima</td><td>$alltime.heatindex.max</td><td>$alltime.heatindex.maxtime</td></tr>
 			<tr><td colspan="3"><br><b>Pressione</b></td></tr>
-			<tr><td>Maggiore</td><td>$alltime.barometer.max</td><td>$alltime.barometer.maxtime</td></tr>
-			<tr><td>Minore</td><td>$alltime.barometer.min</td><td>$alltime.barometer.mintime</td></tr>
+			<tr><td>Massima</td><td>$alltime.barometer.max</td><td>$alltime.barometer.maxtime</td></tr>
+			<tr><td>Minima</td><td>$alltime.barometer.min</td><td>$alltime.barometer.mintime</td></tr>
 			<tr><td colspan="3"><br><b>Vento</b></td></tr>
-			<tr><td>Maggiore Sostenuto</td><td>$alltime.windSpeed.max</td><td>$alltime.windSpeed.maxtime</td></tr>
-			<tr><td>Raffica Maggiore</td><td>$alltime.windGust.max</td><td>$alltime.windGust.maxtime</td></tr>
-			<tr><td colspan="3"><br><b>Indice di calore</b></td></tr>
-			<tr><td>Minimo</td><td>$alltime.windchill.min</td><td>$alltime.windchill.mintime</td></tr>
+			<tr><td>Sostenibilit&agrave Max</td><td>$alltime.windSpeed.max</td><td>$alltime.windSpeed.maxtime</td></tr>
+			<tr><td>Raffica Max</td><td>$alltime.windGust.max</td><td>$alltime.windGust.maxtime</td></tr>
+			<tr><td colspan="3"><br><b>Temperatura Percepita</b></td></tr>
+			<tr><td>Lowest</td><td>$alltime.windchill.min</td><td>$alltime.windchill.mintime</td></tr>
 			#if $alltime.radiation.has_data
-			<tr><td colspan="3"><br><b>Radiazione Solare</b></td></tr>
-			<tr><td>Maggiore</td><td>$alltime.radiation.max</td><td>$alltime.radiation.maxtime</td></tr>
+			<tr><td colspan="3"><br><b>Radiazioni Solari</b></td></tr>
+			<tr><td>Massima</td><td>$alltime.radiation.max</td><td>$alltime.radiation.maxtime</td></tr>
 			#end if
 			#if $alltime.lux.has_data
-			<tr><td colspan="3"><br><b>Luminosit&Agrave;</b></td></tr>
-			<tr><td>Maggiore</td><td>$alltime.lux.max</td><td>$alltime.lux.maxtime</td></tr>
+			<tr><td colspan="3"><br><b>Luminosit&agrave</b></td></tr>
+			<tr><td>Highest</td><td>$alltime.lux.max</td><td>$alltime.lux.maxtime</td></tr>
 			#end if
+			<!--
 			#if $alltime.lightningStrikes.has_data
-			<tr><td colspan="3"><br><b>Fulmini</b></td></tr>
-			<tr><td>Maggiore</td><td>$alltime.lightningStrikes.max</td><td>$alltime.lightningStrikes.maxtime</td></tr>
+			<tr><td colspan="3"><br><b>Lightning</b></td></tr>
+			<tr><td>Highest</td><td>$alltime.lightningStrikes.max</td><td>$alltime.lightningStrikes.maxtime</td></tr>
 			#end if
+			-->
 			#if $alltime.inTemp.has_data
-			<tr><td colspan="3"><br><b>Temperatura interna</b></td></tr>
-			<tr><td>Maggiore</td><td>$alltime.inTemp.max</td><td>$alltime.inTemp.maxtime</td></tr>
-			<tr><td>Minore</td><td>$alltime.inTemp.min</td><td>$alltime.inTemp.mintime</td></tr>
+			<tr><td colspan="3"><br><b>Temperature Interne</b></td></tr>
+			<tr><td>Highest</td><td>$alltime.inTemp.max</td><td>$alltime.inTemp.maxtime</td></tr>
+			<tr><td>Lowest</td><td>$alltime.inTemp.min</td><td>$alltime.inTemp.mintime</td></tr>
 			#end if
 			#if $alltime.inHumidity.has_data
-			<tr><td colspan="3"><br><b>Umidit&Agrave;</b></td></tr>
-			<tr><td>Maggiore</td><td>$alltime.inHumidity.max</td><td>$alltime.inHumidity.maxtime</td></tr>
-			<tr><td>Minore</td><td>$alltime.inHumidity.min</td><td>$alltime.inHumidity.mintime</td></tr>
+			<tr><td colspan="3"><br><b>Umidit&agrave Interna</b></td></tr>
+			<tr><td>Highest</td><td>$alltime.inHumidity.max</td><td>$alltime.inHumidity.maxtime</td></tr>
+			<tr><td>Lowest</td><td>$alltime.inHumidity.min</td><td>$alltime.inHumidity.mintime</td></tr>
 			#end if
                     </table>
                 </div>
@@ -149,21 +153,21 @@
                 </div>
 
 		<div class="card">
-                    <h1><i class="far fa-thermometer-half" ></i> Temperatura media mensile</h1>
+                    <h1><i class="far fa-thermometer-half" ></i> Temperature Medie Mensili</h1>
 			<div class="tablefix">
                     	$avg_temp_table
 			</div>
                 </div>
 		
 		<div class="card">
-                    <h1><i class="fas fa-cloud-rain m-blau" ></i> Pioggia mensile totale </h1>
+                    <h1><i class="fas fa-cloud-rain m-blau" ></i> Pioggia Totale Mensile </h1>
 			<div class="tablefix">
                     	$rain_table
 			</div>
                 </div>
 
 		<div class="card">
-                    <h1><i class="fas fa-umbrella m-blau" ></i> Numbero di giorni di pioggia </h1>
+                    <h1><i class="fas fa-umbrella m-blau" ></i> Numero di Giorni di Pioggia </h1>
 			<div class="tablefix">
                     	$rain_count_table
 			</div>
@@ -171,24 +175,26 @@
 
 		#if $month.inTemp.has_data
 		<div class="card">
-                    <h1><i class="fas fa-thermometer-half m-rot" ></i> Temperatura interna media per mese</h1>
+                    <h1><i class="fas fa-thermometer-half m-rot" ></i> Temperatura Interna media Mensile</h1>
 			<div class="tablefix">
                     	$avg_htemp_table
 			</div>
                 </div>
 		#end if
-
+		
+		<!--
 		#if $month.lightningStrikes.has_data
 		<div class="card">
-                    <h1><i class="fas fa-bolt m-orange" ></i> Fulmini Totali </h1>
+                    <h1><i class="fas fa-bolt m-orange" ></i> Total Lightning Strikes </h1>
 			<div class="tablefix">
                     	$lightning_sum_table
 			</div>
                 </div>
 		#end if
+		-->
 
 		<div class="card">
-                    <h1><i class="fas fa-table m-grau" ></i> Numeero di giorni con osservazioni</h1>
+                    <h1><i class="fas fa-table m-grau" ></i> Numero di giorni in Osservazione</h1>
 			<div class="tablefix">
                     	$temp_count_table
 			</div>

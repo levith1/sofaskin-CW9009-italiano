@@ -7,48 +7,48 @@
     <!-- Google verification tag -->
     <meta name="google-site-verification" content="skDuSC68YDlkfq2GfylRvmzM4WE5RgCKZIV275lKZ1A" />
     #if $Extras.has_key('cwop')
-    <meta name="description" content="A $station.hardware stazione meteo report condizioni meteo correnti da $station.location ($Extras.cwop). Sito meteo generato da WeeWx. ">
+    <meta name="description" content="A $station.hardware stazione meteorologica che riporta le condizioni meteorologiche attuali di $station.location ($Extras.cwop). Sito generato da WeeWx. ">
     #else
-    <meta name="description" content="A $station.hardware stazione meteo report condizioni meteo correnti da $station.location. Sito meteo generato da WeeWx. ">
+    <meta name="description" content="A $station.hardware stazione meteorologica che riporta le condizioni meteorologiche attuali di $station.location. Sito generato da WeeWx. ">
     #end if
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="http://gmpg.org/xfn/11" />
     #if $Extras.has_key('web_url')
     <link rel="canonical" href="$Extras.web_url"/>
     #end if
-    <title>Condizioni meteo correnti per $station.location</title>
+    <title>Condizioni Meteo Correnti di $station.location</title>
     <!-- Open Graph -->
     #if $Extras.has_key('cwop')
-    <meta property="og:site_name" content="$station.location Stazione Meteo ($Extras.cwop)" />
-    <meta property="og:title" content="$station.location ($Extras.cwop) Condizioni Meteo Correnti"/>
+    <meta property="og:site_name" content="$station.location Weather Station ($Extras.cwop)" />
+    <meta property="og:title" content="$station.location ($Extras.cwop) Current Weather Conditions"/>
     #else
-    <meta property="og:site_name" content="$station.location Stazione Meteo" />
-    <meta property="og:title" content="$station.location Condizioni Meteo Correnti"/>
+    <meta property="og:site_name" content="$station.location Weather Station" />
+    <meta property="og:title" content="$station.location Current Weather Conditions"/>
     #end if
     #if $Extras.has_key('web_url')
     <meta property="og:image" content="$Extras.web_url/daytempdew.png"/>
     <meta property="og:url" content="$Extras.web_url"/>
     #end if
     #if $Extras.has_key('cwop')
-    <meta property="og:description" content="A $station.hardware stazione meteo report condizioni meteo correnti da $station.location ($Extras.cwop). Sito meteo generato da WeeWx. " />
+    <meta property="og:description" content="A $station.hardware stazione meteorologica che riporta le condizioni meteorologiche attuali di $station.location ($Extras.cwop). Sito generato WeeWx. " />
     #else
-    <meta property="og:description" content="A $station.hardware stazione meteo report condizioni meteo correnti da $station.location ($Extras.cwop). Sito meteo generato da WeeWx. " />
+    <meta property="og:description" content="A $station.hardware stazione meteorologica che riporta le condizioni meteorologiche attuali di $station.location ($Extras.cwop). Sito geneerato da WeeWx. " />
     #end if
     <meta property="og:type" content="website" />
     <!--SM Markups -->
     #if $Extras.has_key('cwop')
-    <meta itemprop="name" content="Condizioni Meteo Correnti per station.location ($Extras.cwop) "/>
+    <meta itemprop="name" content="Condizioni Meteo Correnti di station.location ($Extras.cwop) "/>
     #else
-    <meta itemprop="name" content="Condizioni Meteo Correnti per $station.location"/>
+    <meta itemprop="name" content="Condizioni Meteo Correnti di $station.location"/>
     #end if
     <meta itemprop="image" content="$Extras.web_url/daytempdew.png"/>
     #if $Extras.has_key('web_url')
     <meta itemprop="url" content="$Extras.web_url"/>
     #end if
     #if $Extras.has_key('cwop')
-    <meta itemprop="description" content="A $station.hardware stazione meteo report condizioni meteo correnti da $station.location ($Extras.cwop). Sito meteo generato da WeeWx. " />
+    <meta itemprop="description" content="A $station.hardware stazione meteorologica che riporta le condizioni meteorologiche attuali di $station.location ($Extras.cwop). This web site is powered by WeeWx. " />
     #else
-    <meta itemprop="description" content="A $station.hardware stazione meteo report condizioni meteo correnti da $station.location ($Extras.cwop). Sito meteo generato da WeeWx. " />
+    <meta itemprop="description" content="A $station.hardware stazione meteorologica che riporta le condizioni meteorologiche attuali di $station.location ($Extras.cwop). This web site is powered by WeeWx. " />
     #end if
 
     <!-- FavIcons -->
@@ -58,12 +58,15 @@
     <!-- Styles -->
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/main.css">
-
-    <!-- Font Awesome CDN links for 5.12.0-->
+    
+    <!-- Font Awesome site kit links -->
+    
     <!-- If you have a pro license -->
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.12.0/css/all.css" integrity="sha384-ekOryaXPbeCpWQNxMwSWVvQ0+1VrStoPJq54shlYhR8HzQgig1v5fas6YgOqLoKz" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/20f41d8eed.js" crossorigin="anonymous"></script>
+   
     <!-- Free license -->
-    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css" integrity="sha384-REHJTs1r2ErKBuJB0fCK99gCYsVjwxHrSU0N7I1zl9vZbggVJXRMsv/sLlOAGb4M" crossorigin="anonymous"> -->
+    <!-- <script src="https://kit.fontawesome.com/b527f43d5a.js" crossorigin="anonymous"></script> -->
+   
     <!-- Script -->
     <script src="js/modernizr-2.6.2.min.js"></script>
     <script src="js/checkdiff.js"></script>
@@ -74,7 +77,7 @@
       <div class="container-fix" >
         <div class="h-left" >
           <h1><i class="fas fa-cloud" ></i> $station.location </h1>
-          <p>$station.latitude[0]&deg; $station.latitude[1]' $station.latitude[2] | $station.longitude[0]&deg; $station.longitude[1]' $station.longitude[2] | $station.altitude | <a href="https://www.google.com/maps/?q=$station.latitude[0]&deg;%20$station.latitude[1]%20$station.latitude[2],$station.longitude[0]&deg;%20$station.longitude[1]%20$station.longitude[2]" target="_blank" ><i class="fas fa-map-marker-alt" ></i> Show on map</a></p>
+          <p>$station.latitude[0]&deg; $station.latitude[1]' $station.latitude[2] | $station.longitude[0]&deg; $station.longitude[1]' $station.longitude[2] | $station.altitude | <a href="https://www.google.com/maps/?q=$station.latitude[0]&deg;%20$station.latitude[1]%20$station.latitude[2],$station.longitude[0]&deg;%20$station.longitude[1]%20$station.longitude[2]" target="_blank" ><i class="fas fa-map-marker-alt" ></i> Mostra sulla mappa</a></p>
           <h2>Condizioni Meteo Correnti</h2>
           <p><i class="far fa-clock" ></i> $current.dateTime $current.dateTime.format("%Z")</p>
           <p id="freshweather" class="m-orange"></p>
@@ -109,7 +112,7 @@
             <li><a href="week.html" >Settimana</a></li>
             <li><a href="month.html" >Mese</a></li>
             <li><a href="year.html" >Anno</a></li>
-            <li><a href="summary.html" >Sommario</a></li>
+            <li><a href="summary.html" >Tabelle</a></li>
             <li><a href="about.html" >About</a></li>
             <li><a href="RSS/weewx_rss.xml" ><i class="fas fa-rss" ></i></a></li>
           </ul>
@@ -129,7 +132,7 @@
             #end if
             <table class="tablespacer">
               <tr>
-                <td>Temperatura Esterna</td>
+                <td>Temperatura</td>
                 <td>$current.outTemp</td>
               </tr>
               <tr>
@@ -145,7 +148,7 @@
                 <td>$current.dewpoint</td>
               </tr>
               <tr>
-                <td>Umidit&agrave;</td>
+                <td>Umidit&agrave</td>
                 <td>$current.outHumidity</td>
               </tr>
               <tr>
@@ -184,19 +187,19 @@
               </tr>
 	      #if $day.inTemp.has_data
               <tr>
-                <td>Temperatura Interna</td>
+                <td>Temperatura</td>
                 <td>$current.inTemp</td>
               </tr>
 	      #end if
 	      #if $day.inHumidity.has_data
               <tr>
-                <td>Umidit&agrave; Interna</td>
+                <td>Inside Humidity</td>
                 <td>$current.inHumidity</td>
               </tr>
 	      #end if
               #if $day.extraTemp1.has_data
               <tr>
-                <td>Punto di Rugiada</td>
+                <td>Pond Temperature</td>
                 <td>$current.extraTemp1</td>
               </tr>
               #end if
@@ -220,32 +223,34 @@
               #end if
 	      #if $day.lux.has_data
               <tr>
-                <td>Luminosit&agrave;</td>
+                <td>Luminosit&agrave</td>
                 <td>$current.lux</td>
               </tr>
               #end if
+	      <!--
 	      #if $day.lightningStrikes.has_data
               <tr>
-                <td>Fulmini</td>
+                <td>Lightning Strikes</td>
                 <td>$current.lightningStrikes</td>
               </tr>
 	      <tr>
-                <td>Distanza Media Fulmini</td>
+                <td>Average Strike Distance</td>
                 <td>$current.lightningAvgDistance</td>
               </tr>
               #end if
+	      -->
             </table>
           </div>
           <div class="card" >
             <h1><i class="far fa-moon m-grau" ></i> Dalla Mezzanotte</h1>
             <table class="tablespacer">
               <tr>
-                <td>Temperatura Massima</td>
+                <td>Temperature Max</td>
                 <td>$day.outTemp.max</td>
                 <td>$day.outTemp.maxtime</td>
               </tr>
               <tr>
-                <td>Temperatura Minima</td>
+                <td>Temperatura Min</td>
                 <td>$day.outTemp.min</td>
                 <td>$day.outTemp.mintime</td>
               </tr>
@@ -255,7 +260,7 @@
                 <td>$day.heatindex.maxtime</td>
               </tr>
               <tr>
-                <td>Indice di Calore Min</td>
+                <td>Temperatura Percepita Min</td>
                 <td>$day.windchill.min</td>
                 <td>$day.windchill.mintime</td>
               </tr>
@@ -270,12 +275,12 @@
                 <td>$day.dewpoint.mintime</td>
               </tr>
               <tr>
-                <td>Umidit&agrave; Max</td>
+                <td>Umidit&agrave Max</td>
                 <td>$day.outHumidity.max</td>
                 <td>$day.outHumidity.maxtime</td>
               </tr>
               <tr>
-                <td>Umidit&agrave; Min</td>
+                <td>Umidit&agrave Min</td>
                 <td>$day.outHumidity.min</td>
                 <td>$day.outHumidity.mintime</td>
               </tr>
@@ -295,7 +300,7 @@
                 <td></td>
               </tr>
               <tr>
-                <td>Indice di Pioggia Max</td>
+                <td>Indice di Pioggia Odierna</td>
                 <td>$day.rainRate.max</td>
                 <td>$day.rainRate.maxtime</td>
               </tr>
@@ -315,18 +320,18 @@
                 <td></td>
               </tr>
               <tr>
-                <td>Velocit&agrave; Vettoriale Vento</td>
+                <td>Velocit&agrave Vento Vettoriale</td>
                 <td>$day.wind.vecavg</td>
                 <td></td>
               </tr>
               <tr>
-                <td>Direzione Vettoriale Vento</td>
+                <td>Direzione Vento Vettoriale</td>
                 <td>$day.wind.vecdir</td>
                 <td></td>
               </tr>
 	      #if $day.inTemp.has_data
               <tr>
-                <td>Temperatura Interna Max</td>
+                <td>Temperatura Max</td>
                 <td>$day.inTemp.max</td>
                 <td>$day.inTemp.maxtime</td>
               </tr>
@@ -338,24 +343,24 @@
 	      #end if
 	      #if $day.inHumidity.has_data
               <tr>
-                <td>Umidit&agrave; Interna Max</td>
+                <td>Umidit&agrave Interna Max</td>
                 <td>$day.inHumidity.max</td>
                 <td>$day.inHumidity.maxtime</td>
               </tr>
               <tr>
-                <td>Umidit&agrave; Interna Min</td>
+                <td>Umidit&agrave Interna Min</td>
                 <td>$day.inHumidity.min</td>
                 <td>$day.inHumidity.mintime</td>
               </tr>
 	      #end if
               #if $day.extraTemp1.has_data
               <tr>
-                <td>Punto di Rugiada Max</td>
+                <td>Temperatura dello Stagno Max</td>
                 <td>$day.extraTemp1.max</td>
                 <td>$day.extraTemp1.maxtime</td>
               </tr>
               <tr>
-                <td>Punto di Rugiada Min</td>
+                <td>Temperatura dello Stagno Min</td>
                 <td>$day.extraTemp1.min</td>
                 <td>$day.extraTemp1.mintime</td>
               </tr>
@@ -388,23 +393,25 @@
               #end if
 	      #if $day.lux.has_data
               <tr>
-                <td>Luminosit&agrave; Max</td>
+                <td>Luminosit&agrave Max</td>
                 <td>$day.lux.max</td>
                 <td>$day.lux.maxtime</td>
               </tr>
               #end if
+	      <!--
 	      #if $day.lightningStrikes.has_data
               <tr>
-                <td>Fulmini Max</td>
+                <td>Lightning Strikes</td>
                 <td>$day.lightningStrikes.sum</td>
                 <td></td>
               </tr>
 	       <tr>
-                <td>Distanza Media Fulmini</td>
+                <td>Average Strike Distance</td>
                 <td>$day.lightningAvgDistance.avg</td>
 		<td></td>
               </tr>
               #end if
+	      -->
             </table>
           </div>
           
@@ -448,7 +455,7 @@
             #end if
 	  #if $days_ago($days_ago=$n).outTemp.max.string != "   N/A"
 	  <div class="card" >
-            <h1><i class="fas fa-history" ></i> Scorso $days_ago($days_ago=$n).dateTime.format("%d-%b (%Y)") </h1>
+            <h1><i class="fas fa-history" ></i> Ieri $days_ago($days_ago=$n).dateTime.format("%d-%b (%Y)") </h1>
             <table class="tablespacer">
               <tr>
                 <td>Temperatura Max</td>
@@ -471,12 +478,12 @@
                 <td>$days_ago($days_ago=$n).dewpoint.mintime</td>
               </tr>
               <tr>
-                <td>Umidit&Agrave; Max</td>
+                <td>Umidit&agrave Max</td>
                 <td>$days_ago($days_ago=$n).outHumidity.max</td>
                 <td>$days_ago($days_ago=$n).outHumidity.maxtime</td>
               </tr>
               <tr>
-                <td>Umidit&Agrave; Min</td>
+                <td>Umidit&agrave Min</td>
                 <td>$days_ago($days_ago=$n).outHumidity.min</td>
                 <td>$days_ago($days_ago=$n).outHumidity.mintime</td>
               </tr>
@@ -519,24 +526,24 @@
 	      #end if
 	      #if $days_ago($days_ago=$n).inHumidity.has_data
               <tr>
-                <td>Umidit&Agrave; Interna Max</td>
+                <td>Umidit&agrave Interna Max</td>
                 <td>$days_ago($days_ago=$n).inHumidity.max</td>
                 <td>$days_ago($days_ago=$n).inHumidity.maxtime</td>
               </tr>
               <tr>
-                <td>Umidit&Agrave; Interna Min</td>
+                <td>Umidit&agrave Min</td>
                 <td>$days_ago($days_ago=$n).inHumidity.min</td>
                 <td>$days_ago($days_ago=$n).inHumidity.mintime</td>
               </tr>
 	      #end if
               #if $days_ago($days_ago=$n).extraTemp1.has_data
               <tr>
-                <td>Punto di Rugiada Max</td>
+                <td>Temperatura dello Stagno Max</td>
                 <td>$days_ago($days_ago=$n).extraTemp1.max</td>
                 <td>$days_ago($days_ago=$n).extraTemp1.maxtime</td>
               </tr>
               <tr>
-                <td>Punto di Rugiada Min</td>
+                <td>Temperatura dello Stagno Min</td>
                 <td>$days_ago($days_ago=$n).extraTemp1.min</td>
                 <td>$days_ago($days_ago=$n).extraTemp1.mintime</td>
               </tr>
@@ -569,7 +576,7 @@
               #end if
 	      #if $days_ago($days_ago=$n).lux.has_data
               <tr>
-                <td>Luminosit&Agrave; Max</td>
+                <td>Luminosit&agrave Max</td>
                 <td>$days_ago($days_ago=$n).lux.max</td>
                 <td>$days_ago($days_ago=$n).lux.maxtime</td>
               </tr>
@@ -600,7 +607,7 @@
           #if $Extras.has_key('camera')
           <!--camera section-->
           <div class="card" >
-            <h1><i class="fas fa-camera-alt" style="color:#999"></i> Web Cam</h1>
+            <h1><i class="fas fa-camera-alt" style="color:#999"></i> Webcam</h1>
             <div class="s-center s-content s-display-container" style="max-width:800px">
               #set $b=0
               #for $i in $Extras.camera
@@ -697,7 +704,7 @@
                   <td>$("%.1f&deg;" % $almanac.sun.ra)</td>
                 </tr>
                 <tr>
-                  <td>Declinazione:</td>
+                  <td>Inclinazione:</td>
                   <td>$("%.1f&deg;" % $almanac.sun.dec)</td>
                 </tr>
                 #if $almanac.next_equinox.raw < $almanac.next_solstice.raw
@@ -727,15 +734,15 @@
               <h3>Luna</h3>
               <table>
                 <tr>
-                  <td>Sorge:</td>
+                  <td>Levata:</td>
                   <td>$almanac.moon.rise</td>
                 </tr>
                 <tr>
-                  <td>Transita:</td>
+                  <td>Transito:</td>
                   <td>$almanac.moon.transit</td>
                 </tr>
                 <tr>
-                  <td>Cala:</td>
+                  <td>Calata:</td>
                   <td>$almanac.moon.set</td>
                 </tr>
                 <tr>
@@ -751,7 +758,7 @@
                   <td>$("%.1f&deg;" % $almanac.moon.ra)</td>
                 </tr>
                 <tr>
-                  <td>Declinazione:</td>
+                  <td>Inclinazione:</td>
                   <td>$("%.1f&deg;" % $almanac.moon.dec)</td>
                 </tr>
                 #if $almanac.next_full_moon.raw < $almanac.next_new_moon.raw
@@ -769,13 +776,13 @@
                   <td>$almanac.next_new_moon</td>
                 </tr>
                 <tr>
-                  <td>Luna Nuova:</td>
+                  <td>Luna Piena:</td>
                   <td>$almanac.next_full_moon</td>
                 </tr>
                 #end if
                 <tr>
                   <td>Fase:</td>
-                  <td>$almanac.moon_phase<br />($almanac.moon_fullness% full)</td>
+                  <td>$almanac.moon_phase<br />($almanac.moon_fullness% piena)</td>
                 </tr>
               </table>
             </div>
@@ -792,13 +799,13 @@
               </tr>
               <tr>
                 <td>Fase Lunare:</td>
-                <td>$almanac.moon_phase<br/>($almanac.moon_fullness% full)</td>
+                <td>$almanac.moon_phase<br/>($almanac.moon_fullness% piena)</td>
               </tr>
             </table>
             #end if
           </div>
           <div class="card cc graphs" >
-            <h1><i class="fas fa-chart-line m-gruen" ></i> Graphs</h1>
+            <h1><i class="fas fa-chart-line m-gruen" ></i> Tabelle</h1>
             <img src="daytempdew.png" alt="temperatures" />
             <img src="dayrain.png" alt="rain" />
             <img src="daywind.png" alt="wind" />
@@ -818,9 +825,11 @@
             #if $day.rxCheckPercent.has_data
             <img src="dayrx.png" alt="day rx percent"/>
             #end if
+	    <!--
 	    #if $day.lightningStrikes.has_data
             <img src="daylightning.png" alt="Lightning" />
 	    #end if
+	    -->
 	    #if $day.windBatteryStatus.has_data and $day.outTempBatteryStatus.has_data
             <img src="daybattery.png" alt="day battery"/>
             #end if
