@@ -1,7 +1,7 @@
 # Sofaskin-CW9009
 Modifiche CW9009 al codice alle pagine web Sofaskin per WeeWx originariamente sviluppato da Sven su http://neopround.com/project/weewx. Per favore guarda il readme per i requisiti per usare questo skin. Una versione italiana di queste pagine è disponibile su  http://micae.it/2017/12/28/sofaskin-italiano/.
 
-Sofaskin V1.1 è sviluppato da Sven su Neoground: https://neoground.com/portfolio/neowx/. ***Sven da tempo non sviluppa lo skin originale.*** Questo è un grande template ma ho apportato delle modifiche secondo le mie necessità. Ho anche aggiunto del codice da altri template <a href="http://www.dajda.net">dajda.net</a> per le tabelle storiche NOAA. C'è anche del codice aggiunto da <a href=http://www.torkel.se/weather/index.html> Björn Torkelsson</a>. Una lista dei cambiamenti è elencate sotto con le istruzioni per impostare le tabelle. 
+Sofaskin V1.1 è sviluppato da Sven su Neoground: https://neoground.com/portfolio/neowx/. ***Sven da tempo non supporta lo skin originale.*** Questo è un grande template ma ho apportato delle modifiche secondo le mie necessità. Ho anche aggiunto del codice da altri template <a href="http://www.dajda.net">dajda.net</a> per le tabelle storiche NOAA. C'è anche del codice aggiunto da <a href=http://www.torkel.se/weather/index.html> Björn Torkelsson</a>. Una lista dei cambiamenti è elencate sotto con le istruzioni per impostare le tabelle. 
 
 - Aggiunte delle variabili nel file skin.conf per la personalizzazione delle pagine. 
 - Rimosse le tabelle mensili e annuali dalla lista drop down list e aggiunte in una pagina separata. 
