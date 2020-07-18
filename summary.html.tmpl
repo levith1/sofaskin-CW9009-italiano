@@ -103,7 +103,7 @@
 			<tr><td>Massima</td><td>$alltime.dewpoint.max</td><td>$alltime.dewpoint.maxtime</td></tr>
 			<tr><td>Minima</td><td>$alltime.dewpoint.min</td><td>$alltime.dewpoint.mintime</td></tr>
 			<tr><td colspan="3"><br><b>Piogge</b></td></tr>
-			<tr><td>Giorno di Pioggia Max</td><td>$alltime.rain.maxsum</td><td>$alltime.rain.maxsumtime.format("%m/%d/%Y")</td></tr>
+			<tr><td>Giornata Pi&ugrave Piovosa</td><td>$alltime.rain.maxsum</td><td>$alltime.rain.maxsumtime.format("%d/%m/%Y")</td></tr>
 			<tr><td>Indice di Pioggia Max</td><td>$alltime.rainRate.max</td><td>$alltime.rainRate.maxtime</td></tr>
 			<tr><td colspan="3"><br><b>Indice di Calore</b></td></tr>
 			<tr><td>Massima</td><td>$alltime.heatindex.max</td><td>$alltime.heatindex.maxtime</td></tr>
@@ -129,16 +129,18 @@
 			<tr><td>Highest</td><td>$alltime.lightningStrikes.max</td><td>$alltime.lightningStrikes.maxtime</td></tr>
 			#end if
 			-->
+<!--
 			#if $alltime.inTemp.has_data
 			<tr><td colspan="3"><br><b>Temperature Interne</b></td></tr>
-			<tr><td>Highest</td><td>$alltime.inTemp.max</td><td>$alltime.inTemp.maxtime</td></tr>
-			<tr><td>Lowest</td><td>$alltime.inTemp.min</td><td>$alltime.inTemp.mintime</td></tr>
+			<tr><td>Massima</td><td>$alltime.inTemp.max</td><td>$alltime.inTemp.maxtime</td></tr>
+			<tr><td>Minima</td><td>$alltime.inTemp.min</td><td>$alltime.inTemp.mintime</td></tr>
 			#end if
 			#if $alltime.inHumidity.has_data
 			<tr><td colspan="3"><br><b>Umidit&agrave Interna</b></td></tr>
-			<tr><td>Highest</td><td>$alltime.inHumidity.max</td><td>$alltime.inHumidity.maxtime</td></tr>
-			<tr><td>Lowest</td><td>$alltime.inHumidity.min</td><td>$alltime.inHumidity.mintime</td></tr>
+			<tr><td>Massima</td><td>$alltime.inHumidity.max</td><td>$alltime.inHumidity.maxtime</td></tr>
+			<tr><td>Minima</td><td>$alltime.inHumidity.min</td><td>$alltime.inHumidity.mintime</td></tr>
 			#end if
+-->
                     </table>
                 </div>
 
